@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <div class="container">
+    <div class="columns large-12">
+  		<h2>
+        Past stimuli
+      </h2>
+  	</div>
+
+  	<div class="squawks">
+    {% for stimulus in stimuli %}
+      <blockquote class="blockquote">
+        {{ stimulus[1] }}
+      </blockquote>
+
+    {% else %}
+      <div class="error">
+        <em>Unbelievable.  No entries here so far</em>
+    {% endfor %}
+    	</div>
+    </div>
+  </div>
+
+{% endblock %}

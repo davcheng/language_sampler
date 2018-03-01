@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Speech Language</title>
+  <meta name="description" content="Speech Language Sampler." />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content=""/>
+  <meta property="og:title" content="Language Sampler"/>
+  <meta property="og:url" content=""/>
+  <meta property="og:site_name" content="Speech Up - Language Sampler"/>
+  <meta property="fb:admins" content="speechupinc" />
+  <script src="annyang.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js'></script>
+  <script src='js/annyang.js'></script>
+  <script src='js/app.js'></script>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles/app.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600|Raleway" rel="stylesheet">
+</head>
+
+<body>
+  <section id="section_header">
+    <h1><em>David's Quick Speech Language Sampler!</em> <br>(Not HIPPA Compliant)</h1>
+
+    <img src="images/tpscover.jpg" id="tpsreport" class="hidden">
+  </section>
+  <section id="section_image_search">
+    <p><em>Stimulus</em></p>
+    <div id="stimulus">
+      <img src="http://www.alwayshelpfulveterinaryservices.com/wp-content/uploads/DOG_Shopping.jpg"></img>
+    </div>
+
+    <div id="flickrLoader"><p></p></div>
+    <div id="flickrGallery" class="hidden"></div>
+  </section>
+  <section id="section_biz_use">
+    <p><em>Let's see what you said.</em></p>
+    <p id="speechtext"></p>
+     {% block body %}{% endblock %}
+  </section>
+  <div id="unsupported" class="hidden">
+    <h4>It looks like your browser doesn't support speech recognition.</h4>
+    <p>annyang plays nicely with all browsers, progressively enhancing modern browsers that support the SpeechRecognition standard, while leaving users with older browsers unaffected.</p>
+    <p>Please visit in a desktop browser like Chrome.</p>
+  </div>
+  <script src="./vendor/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</body>
+</html>
